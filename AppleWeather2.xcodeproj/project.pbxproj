@@ -28,6 +28,7 @@
 		1CCFD4A32AF8BE8C00A54D18 /* WireCityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4A22AF8BE8C00A54D18 /* WireCityWeather.swift */; };
 		1CCFD4A52AF8BF1700A54D18 /* CityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4A42AF8BF1700A54D18 /* CityWeather.swift */; };
 		1CCFD4A72AF98E9B00A54D18 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4A62AF98E9B00A54D18 /* WeatherViewModel.swift */; };
+		1CCFD4A92AF991CB00A54D18 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4A82AF991CB00A54D18 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		1CCFD4A22AF8BE8C00A54D18 /* WireCityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireCityWeather.swift; sourceTree = "<group>"; };
 		1CCFD4A42AF8BF1700A54D18 /* CityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeather.swift; sourceTree = "<group>"; };
 		1CCFD4A62AF98E9B00A54D18 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		1CCFD4A82AF991CB00A54D18 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				1CCFD49C2AF8B43000A54D18 /* NetworkingServiceImp.swift */,
 				1CCFD49E2AF8B5F500A54D18 /* URLComponentsBuilder.swift */,
 				1CCFD4A02AF8BBD700A54D18 /* URLRequestFactory.swift */,
+				1CCFD4A82AF991CB00A54D18 /* WeatherService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CCFD4A92AF991CB00A54D18 /* WeatherService.swift in Sources */,
 				1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */,
 				1CCFD49B2AF8B3BD00A54D18 /* Typealias.swift in Sources */,
 				1CCFD45B2AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld in Sources */,
