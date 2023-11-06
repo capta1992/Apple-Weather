@@ -19,6 +19,7 @@
 		1CCFD48E2AF8A9C800A54D18 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD48D2AF8A9C800A54D18 /* Extensions.swift */; };
 		1CCFD4912AF8AF2700A54D18 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4902AF8AF2700A54D18 /* EndPoint.swift */; };
 		1CCFD4952AF8AF6600A54D18 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4942AF8AF6600A54D18 /* Location.swift */; };
+		1CCFD4972AF8B03C00A54D18 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4962AF8B03C00A54D18 /* NetworkingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		1CCFD48D2AF8A9C800A54D18 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1CCFD4902AF8AF2700A54D18 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		1CCFD4942AF8AF6600A54D18 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1CCFD4962AF8B03C00A54D18 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				1CCFD4902AF8AF2700A54D18 /* EndPoint.swift */,
+				1CCFD4962AF8B03C00A54D18 /* NetworkingError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */,
 				1CCFD45B2AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld in Sources */,
 				1CCFD4912AF8AF2700A54D18 /* EndPoint.swift in Sources */,
+				1CCFD4972AF8B03C00A54D18 /* NetworkingError.swift in Sources */,
 				1CCFD4532AF8A8C500A54D18 /* SceneDelegate.swift in Sources */,
 				1CCFD4952AF8AF6600A54D18 /* Location.swift in Sources */,
 				1CCFD48E2AF8A9C800A54D18 /* Extensions.swift in Sources */,
