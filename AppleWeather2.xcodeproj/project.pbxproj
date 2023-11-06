@@ -25,6 +25,8 @@
 		1CCFD49D2AF8B43000A54D18 /* NetworkingServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD49C2AF8B43000A54D18 /* NetworkingServiceImp.swift */; };
 		1CCFD49F2AF8B5F500A54D18 /* URLComponentsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD49E2AF8B5F500A54D18 /* URLComponentsBuilder.swift */; };
 		1CCFD4A12AF8BBD700A54D18 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4A02AF8BBD700A54D18 /* URLRequestFactory.swift */; };
+		1CCFD4A32AF8BE8C00A54D18 /* WireCityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4A22AF8BE8C00A54D18 /* WireCityWeather.swift */; };
+		1CCFD4A52AF8BF1700A54D18 /* CityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4A42AF8BF1700A54D18 /* CityWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		1CCFD49C2AF8B43000A54D18 /* NetworkingServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceImp.swift; sourceTree = "<group>"; };
 		1CCFD49E2AF8B5F500A54D18 /* URLComponentsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsBuilder.swift; sourceTree = "<group>"; };
 		1CCFD4A02AF8BBD700A54D18 /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
+		1CCFD4A22AF8BE8C00A54D18 /* WireCityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireCityWeather.swift; sourceTree = "<group>"; };
+		1CCFD4A42AF8BF1700A54D18 /* CityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				1CCFD4942AF8AF6600A54D18 /* Location.swift */,
+				1CCFD4A22AF8BE8C00A54D18 /* WireCityWeather.swift */,
+				1CCFD4A42AF8BF1700A54D18 /* CityWeather.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -353,10 +359,12 @@
 				1CCFD49B2AF8B3BD00A54D18 /* Typealias.swift in Sources */,
 				1CCFD45B2AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld in Sources */,
 				1CCFD4912AF8AF2700A54D18 /* EndPoint.swift in Sources */,
+				1CCFD4A32AF8BE8C00A54D18 /* WireCityWeather.swift in Sources */,
 				1CCFD4992AF8B35400A54D18 /* NetworkingService.swift in Sources */,
 				1CCFD4972AF8B03C00A54D18 /* NetworkingError.swift in Sources */,
 				1CCFD49F2AF8B5F500A54D18 /* URLComponentsBuilder.swift in Sources */,
 				1CCFD49D2AF8B43000A54D18 /* NetworkingServiceImp.swift in Sources */,
+				1CCFD4A52AF8BF1700A54D18 /* CityWeather.swift in Sources */,
 				1CCFD4532AF8A8C500A54D18 /* SceneDelegate.swift in Sources */,
 				1CCFD4952AF8AF6600A54D18 /* Location.swift in Sources */,
 				1CCFD4A12AF8BBD700A54D18 /* URLRequestFactory.swift in Sources */,
