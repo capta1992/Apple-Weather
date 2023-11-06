@@ -13,7 +13,6 @@
 		1CCFD45B2AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4592AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld */; };
 		1CCFD45D2AF8A8C800A54D18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFD45C2AF8A8C800A54D18 /* Assets.xcassets */; };
 		1CCFD4602AF8A8C800A54D18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFD45E2AF8A8C800A54D18 /* LaunchScreen.storyboard */; };
-		1CCFD46B2AF8A8C900A54D18 /* AppleWeather2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD46A2AF8A8C900A54D18 /* AppleWeather2Tests.swift */; };
 		1CCFD4752AF8A8C900A54D18 /* AppleWeather2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4742AF8A8C900A54D18 /* AppleWeather2UITests.swift */; };
 		1CCFD4772AF8A8C900A54D18 /* AppleWeather2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4762AF8A8C900A54D18 /* AppleWeather2UITestsLaunchTests.swift */; };
 		1CCFD48E2AF8A9C800A54D18 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD48D2AF8A9C800A54D18 /* Extensions.swift */; };
@@ -31,6 +30,7 @@
 		1CCFD4A92AF991CB00A54D18 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4A82AF991CB00A54D18 /* WeatherService.swift */; };
 		1CCFD4AB2AF9973E00A54D18 /* WeatherServiceDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4AA2AF9973E00A54D18 /* WeatherServiceDependencies.swift */; };
 		1CCFD4AE2AF9993600A54D18 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4AD2AF9993600A54D18 /* LocationService.swift */; };
+		1CCFD4B02AF9A34900A54D18 /* AdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4AF2AF9A34900A54D18 /* AdapterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,6 @@
 		1CCFD45F2AF8A8C800A54D18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CCFD4612AF8A8C800A54D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CCFD4662AF8A8C900A54D18 /* AppleWeather2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleWeather2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CCFD46A2AF8A8C900A54D18 /* AppleWeather2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWeather2Tests.swift; sourceTree = "<group>"; };
 		1CCFD4702AF8A8C900A54D18 /* AppleWeather2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleWeather2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCFD4742AF8A8C900A54D18 /* AppleWeather2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWeather2UITests.swift; sourceTree = "<group>"; };
 		1CCFD4762AF8A8C900A54D18 /* AppleWeather2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWeather2UITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		1CCFD4A82AF991CB00A54D18 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		1CCFD4AA2AF9973E00A54D18 /* WeatherServiceDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceDependencies.swift; sourceTree = "<group>"; };
 		1CCFD4AD2AF9993600A54D18 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		1CCFD4AF2AF9A34900A54D18 /* AdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +145,7 @@
 		1CCFD4692AF8A8C900A54D18 /* AppleWeather2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1CCFD46A2AF8A8C900A54D18 /* AppleWeather2Tests.swift */,
+				1CCFD4AF2AF9A34900A54D18 /* AdapterTests.swift */,
 			);
 			path = AppleWeather2Tests;
 			sourceTree = "<group>";
@@ -315,6 +315,7 @@
 					};
 					1CCFD4652AF8A8C900A54D18 = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 						TestTargetID = 1CCFD44C2AF8A8C500A54D18;
 					};
 					1CCFD46F2AF8A8C900A54D18 = {
@@ -400,7 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CCFD46B2AF8A8C900A54D18 /* AppleWeather2Tests.swift in Sources */,
+				1CCFD4B02AF9A34900A54D18 /* AdapterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,6 +629,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XQJD5F8BMM;
@@ -637,6 +639,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Captaa.AppleWeather2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppleWeather2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppleWeather2";
@@ -648,6 +651,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XQJD5F8BMM;
