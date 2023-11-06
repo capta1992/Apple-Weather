@@ -20,6 +20,9 @@
 		1CCFD4912AF8AF2700A54D18 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4902AF8AF2700A54D18 /* EndPoint.swift */; };
 		1CCFD4952AF8AF6600A54D18 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4942AF8AF6600A54D18 /* Location.swift */; };
 		1CCFD4972AF8B03C00A54D18 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4962AF8B03C00A54D18 /* NetworkingError.swift */; };
+		1CCFD4992AF8B35400A54D18 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4982AF8B35400A54D18 /* NetworkingService.swift */; };
+		1CCFD49B2AF8B3BD00A54D18 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD49A2AF8B3BD00A54D18 /* Typealias.swift */; };
+		1CCFD49D2AF8B43000A54D18 /* NetworkingServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD49C2AF8B43000A54D18 /* NetworkingServiceImp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		1CCFD4902AF8AF2700A54D18 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		1CCFD4942AF8AF6600A54D18 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		1CCFD4962AF8B03C00A54D18 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		1CCFD4982AF8B35400A54D18 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		1CCFD49A2AF8B3BD00A54D18 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		1CCFD49C2AF8B43000A54D18 /* NetworkingServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceImp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,7 @@
 				1CCFD4562AF8A8C500A54D18 /* Main.storyboard */,
 				1CCFD45C2AF8A8C800A54D18 /* Assets.xcassets */,
 				1CCFD45E2AF8A8C800A54D18 /* LaunchScreen.storyboard */,
+				1CCFD49A2AF8B3BD00A54D18 /* Typealias.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -199,6 +206,8 @@
 			children = (
 				1CCFD4902AF8AF2700A54D18 /* EndPoint.swift */,
 				1CCFD4962AF8B03C00A54D18 /* NetworkingError.swift */,
+				1CCFD4982AF8B35400A54D18 /* NetworkingService.swift */,
+				1CCFD49C2AF8B43000A54D18 /* NetworkingServiceImp.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -335,9 +344,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */,
+				1CCFD49B2AF8B3BD00A54D18 /* Typealias.swift in Sources */,
 				1CCFD45B2AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld in Sources */,
 				1CCFD4912AF8AF2700A54D18 /* EndPoint.swift in Sources */,
+				1CCFD4992AF8B35400A54D18 /* NetworkingService.swift in Sources */,
 				1CCFD4972AF8B03C00A54D18 /* NetworkingError.swift in Sources */,
+				1CCFD49D2AF8B43000A54D18 /* NetworkingServiceImp.swift in Sources */,
 				1CCFD4532AF8A8C500A54D18 /* SceneDelegate.swift in Sources */,
 				1CCFD4952AF8AF6600A54D18 /* Location.swift in Sources */,
 				1CCFD48E2AF8A9C800A54D18 /* Extensions.swift in Sources */,
