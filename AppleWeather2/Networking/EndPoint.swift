@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum EndPoint {
+    case city(cityName: String)
+    case location(location: Location)
+}

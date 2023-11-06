@@ -17,6 +17,8 @@
 		1CCFD4752AF8A8C900A54D18 /* AppleWeather2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4742AF8A8C900A54D18 /* AppleWeather2UITests.swift */; };
 		1CCFD4772AF8A8C900A54D18 /* AppleWeather2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4762AF8A8C900A54D18 /* AppleWeather2UITestsLaunchTests.swift */; };
 		1CCFD48E2AF8A9C800A54D18 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD48D2AF8A9C800A54D18 /* Extensions.swift */; };
+		1CCFD4912AF8AF2700A54D18 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4902AF8AF2700A54D18 /* EndPoint.swift */; };
+		1CCFD4952AF8AF6600A54D18 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4942AF8AF6600A54D18 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		1CCFD4742AF8A8C900A54D18 /* AppleWeather2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWeather2UITests.swift; sourceTree = "<group>"; };
 		1CCFD4762AF8A8C900A54D18 /* AppleWeather2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWeather2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1CCFD48D2AF8A9C800A54D18 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1CCFD4902AF8AF2700A54D18 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		1CCFD4942AF8AF6600A54D18 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 		1CCFD4872AF8A91E00A54D18 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				1CCFD48F2AF8AF0A00A54D18 /* Networking */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -182,8 +187,17 @@
 		1CCFD48C2AF8A94900A54D18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1CCFD4942AF8AF6600A54D18 /* Location.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		1CCFD48F2AF8AF0A00A54D18 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1CCFD4902AF8AF2700A54D18 /* EndPoint.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,7 +333,9 @@
 			files = (
 				1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */,
 				1CCFD45B2AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld in Sources */,
+				1CCFD4912AF8AF2700A54D18 /* EndPoint.swift in Sources */,
 				1CCFD4532AF8A8C500A54D18 /* SceneDelegate.swift in Sources */,
+				1CCFD4952AF8AF6600A54D18 /* Location.swift in Sources */,
 				1CCFD48E2AF8A9C800A54D18 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

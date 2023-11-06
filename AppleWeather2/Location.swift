@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Location {
+    let lan: Double
+    let lon: Double
+}
