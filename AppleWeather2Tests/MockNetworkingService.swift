@@ -7,29 +7,30 @@
 
 import Foundation
 @testable import AppleWeather2
-import XCTest
 
 class MockNetworkingService: NetworkingService {
     
     enum Response {
-        case success
-        case fail
+        case success(WireCityWeather)
+        case failure(NetworkingError)
     }
     
-    var mockResponse: Response = .success
+    var mockResponse: Response
     
-    func fetch<T>(urlRequest: URLRequest, completion: @escaping AppleWeather2.DataResult<T>) async throws where T : Decodable {
+    init(mockReponse: Response) {
+        self.mockResponse = mockReponse
+    }
+    
+    func fetch<T>(urlRequest: URLRequest) async throws -> T where T : Decodable {
         switch mockResponse {
-        case .success:
-            if let bundlePath = Bundle(for: type(of: self)).path(forResource: "weather", ofType: "json"),
-               let jsonData = try? String(contentsOfFile: bundlePath).data(using: .utf8),
-               let wireModel = try? JSONDecoder().decode(T.self, from: jsonData) {
-                completion(.success(wireModel))
-            } else {
-                XCTFail("Failed to decode JSON from bundle")
+        case .success(let wireCityWeather):
+            // Cast the mock data to the expected return type and retuen it
+            guard let result = wireCityWeather as? T else {
+                throw NetworkingError.decodingFailed
             }
-        case .fail:
-            completion(.failure(.noData))
+            return result
+        case .failure(let networkingError):
+            throw networkingError
         }
     }
 }

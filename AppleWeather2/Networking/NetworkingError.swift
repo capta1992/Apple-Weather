@@ -13,6 +13,7 @@ enum NetworkingError: Error, Equatable {
     case noHttpResponse
     case networkingFailure(Error)
     case serialize(Error)
+    case decodingFailed
     case mappingModels(Error)
     
     var debugMessage: String {
@@ -27,6 +28,8 @@ enum NetworkingError: Error, Equatable {
             return "DEBUG: Networking Failure \(error.localizedDescription)"
         case .serialize(let error):
             return "DEBUG: Serialization Error \(error.localizedDescription)"
+        case .decodingFailed:
+            return "DEBUG: Decoding Failed"
         case .mappingModels(let error):
             return "DEBUG: Could not map wire model to data model \(error.localizedDescription)"
         }

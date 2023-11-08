@@ -8,8 +8,8 @@
 import Foundation
 
 protocol WeatherService {
-    func weather(for city: String, completion: @escaping WeatherCompletion) async throws
-    func weather(for location: Location, completion: @escaping WeatherCompletion) async throws
+    func weather(for city: String) async throws -> CityWeather
+    func weather(for location: Location) async throws -> CityWeather
 }
 
 class WeatherServiceImp: WeatherService {
@@ -22,31 +22,21 @@ class WeatherServiceImp: WeatherService {
         self.factory = factory
         self.networkingService = networkingService
     }
-    func weather(for city: String, completion: @escaping WeatherCompletion) async throws {
+    
+    func weather(for city: String) async throws -> CityWeather {
         guard let request = factory.makeRequest(for: .city(cityName: city)) else {
-            return completion(.failure(.couldNotmakeURL))
+            throw NetworkingError.couldNotmakeURL
         }
-        try await execute(request: request, completion: completion)
+        let wireModel: WireCityWeather = try await networkingService.fetch(urlRequest: request)
+        return CityWeather(from: wireModel)
     }
     
-    func weather(for location: Location, completion: @escaping WeatherCompletion) async throws {
+    func weather(for location: Location) async throws -> CityWeather {
         guard let request = factory.makeRequest(for: .location(location: location)) else {
-            return completion(.failure(.couldNotmakeURL))
+            throw NetworkingError.couldNotmakeURL
         }
-        try await execute(request: request, completion: completion)
-    }
-    
-    private func execute(request: URLRequest, completion: @escaping WeatherCompletion) async throws {
-        try await networkingService.fetch(urlRequest: request) { (result: WireWeatherResult) in
-            do {
-                let wiremodel = try result.get()
-                let weatherModel: CityWeather = .init(from: wiremodel)
-                completion(.success(weatherModel))
-            } catch let error as NetworkingError {
-                completion(.failure(error))
-            } catch {
-                completion(.failure(NetworkingError.networkingFailure(error)))
-            }
-        }
+        let wireModel: WireCityWeather = try await networkingService.fetch(urlRequest: request)
+        return CityWeather(from: wireModel)
     }
 }
+

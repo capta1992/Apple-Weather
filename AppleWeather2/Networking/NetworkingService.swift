@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkingService {
-    func fetch<T: Decodable>(urlRequest: URLRequest, completion: @escaping DataResult<T>) async throws
+    func fetch<T: Decodable>(urlRequest: URLRequest) async throws -> T
 }

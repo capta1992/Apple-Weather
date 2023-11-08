@@ -32,6 +32,7 @@
 		1CCFD4AE2AF9993600A54D18 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4AD2AF9993600A54D18 /* LocationService.swift */; };
 		1CCFD4B02AF9A34900A54D18 /* AdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4AF2AF9A34900A54D18 /* AdapterTests.swift */; };
 		1CCFD4B22AF9A7FE00A54D18 /* MockNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4B12AF9A7FE00A54D18 /* MockNetworkingService.swift */; };
+		1CCFD4B42AFB405200A54D18 /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4B32AFB405200A54D18 /* NetworkingServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		1CCFD4AD2AF9993600A54D18 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		1CCFD4AF2AF9A34900A54D18 /* AdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterTests.swift; sourceTree = "<group>"; };
 		1CCFD4B12AF9A7FE00A54D18 /* MockNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkingService.swift; sourceTree = "<group>"; };
+		1CCFD4B32AFB405200A54D18 /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				1CCFD4AF2AF9A34900A54D18 /* AdapterTests.swift */,
 				1CCFD4B12AF9A7FE00A54D18 /* MockNetworkingService.swift */,
+				1CCFD4B32AFB405200A54D18 /* NetworkingServiceTests.swift */,
 			);
 			path = AppleWeather2Tests;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CCFD4B02AF9A34900A54D18 /* AdapterTests.swift in Sources */,
+				1CCFD4B42AFB405200A54D18 /* NetworkingServiceTests.swift in Sources */,
 				1CCFD4B22AF9A7FE00A54D18 /* MockNetworkingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
