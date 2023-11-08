@@ -39,4 +39,3 @@ class WeatherServiceImp: WeatherService {
         return CityWeather(from: wireModel)
     }
 }
-

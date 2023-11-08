@@ -33,6 +33,7 @@
 		1CCFD4B02AF9A34900A54D18 /* AdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4AF2AF9A34900A54D18 /* AdapterTests.swift */; };
 		1CCFD4B22AF9A7FE00A54D18 /* MockNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4B12AF9A7FE00A54D18 /* MockNetworkingService.swift */; };
 		1CCFD4B42AFB405200A54D18 /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4B32AFB405200A54D18 /* NetworkingServiceTests.swift */; };
+		1CCFD4B62AFB5D4A00A54D18 /* URLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4B52AFB5D4900A54D18 /* URLBuilderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		1CCFD4AF2AF9A34900A54D18 /* AdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdapterTests.swift; sourceTree = "<group>"; };
 		1CCFD4B12AF9A7FE00A54D18 /* MockNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkingService.swift; sourceTree = "<group>"; };
 		1CCFD4B32AFB405200A54D18 /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
+		1CCFD4B52AFB5D4900A54D18 /* URLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				1CCFD4AF2AF9A34900A54D18 /* AdapterTests.swift */,
 				1CCFD4B12AF9A7FE00A54D18 /* MockNetworkingService.swift */,
 				1CCFD4B32AFB405200A54D18 /* NetworkingServiceTests.swift */,
+				1CCFD4B52AFB5D4900A54D18 /* URLBuilderTests.swift */,
 			);
 			path = AppleWeather2Tests;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CCFD4B02AF9A34900A54D18 /* AdapterTests.swift in Sources */,
+				1CCFD4B62AFB5D4A00A54D18 /* URLBuilderTests.swift in Sources */,
 				1CCFD4B42AFB405200A54D18 /* NetworkingServiceTests.swift in Sources */,
 				1CCFD4B22AF9A7FE00A54D18 /* MockNetworkingService.swift in Sources */,
 			);
