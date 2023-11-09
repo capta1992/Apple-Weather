@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C71D60E2AFC886300B694F3 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C71D60D2AFC886300B694F3 /* WeatherViewController.swift */; };
 		1C71D6102AFC894B00B694F3 /* SearchBarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C71D60F2AFC894B00B694F3 /* SearchBarNavigationView.swift */; };
+		1C71D6122AFC9FDD00B694F3 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C71D6112AFC9FDD00B694F3 /* NotificationView.swift */; };
+		1C71D6172AFCADB200B694F3 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C71D6162AFCADB200B694F3 /* CityTableViewCell.swift */; };
 		1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4502AF8A8C500A54D18 /* AppDelegate.swift */; };
 		1CCFD4532AF8A8C500A54D18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4522AF8A8C500A54D18 /* SceneDelegate.swift */; };
 		1CCFD4582AF8A8C500A54D18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFD4562AF8A8C500A54D18 /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		1C71D60D2AFC886300B694F3 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		1C71D60F2AFC894B00B694F3 /* SearchBarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarNavigationView.swift; sourceTree = "<group>"; };
+		1C71D6112AFC9FDD00B694F3 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		1C71D6162AFCADB200B694F3 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		1CCFD44D2AF8A8C500A54D18 /* AppleWeather2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWeather2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCFD4502AF8A8C500A54D18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CCFD4522AF8A8C500A54D18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C71D6132AFCAD6700B694F3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				1C71D6112AFC9FDD00B694F3 /* NotificationView.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		1C71D6142AFCAD7500B694F3 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				1C71D60F2AFC894B00B694F3 /* SearchBarNavigationView.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		1C71D6152AFCAD9700B694F3 /* CityCell */ = {
+			isa = PBXGroup;
+			children = (
+				1C71D6162AFCADB200B694F3 /* CityTableViewCell.swift */,
+			);
+			path = CityCell;
+			sourceTree = "<group>";
+		};
 		1CCFD4442AF8A8C500A54D18 = {
 			isa = PBXGroup;
 			children = (
@@ -221,7 +249,9 @@
 		1CCFD48B2AF8A94500A54D18 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1C71D60F2AFC894B00B694F3 /* SearchBarNavigationView.swift */,
+				1C71D6152AFCAD9700B694F3 /* CityCell */,
+				1C71D6132AFCAD6700B694F3 /* Notification */,
+				1C71D6142AFCAD7500B694F3 /* SearchBar */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +423,7 @@
 			files = (
 				1CCFD4A92AF991CB00A54D18 /* WeatherService.swift in Sources */,
 				1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */,
+				1C71D6122AFC9FDD00B694F3 /* NotificationView.swift in Sources */,
 				1C71D6102AFC894B00B694F3 /* SearchBarNavigationView.swift in Sources */,
 				1CCFD49B2AF8B3BD00A54D18 /* Typealias.swift in Sources */,
 				1CCFD45B2AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld in Sources */,
@@ -400,6 +431,7 @@
 				1CCFD4A32AF8BE8C00A54D18 /* WireCityWeather.swift in Sources */,
 				1CCFD4992AF8B35400A54D18 /* NetworkingService.swift in Sources */,
 				1CCFD4972AF8B03C00A54D18 /* NetworkingError.swift in Sources */,
+				1C71D6172AFCADB200B694F3 /* CityTableViewCell.swift in Sources */,
 				1CCFD49F2AF8B5F500A54D18 /* URLComponentsBuilder.swift in Sources */,
 				1CCFD49D2AF8B43000A54D18 /* NetworkingServiceImp.swift in Sources */,
 				1CCFD4A52AF8BF1700A54D18 /* CityWeather.swift in Sources */,
@@ -521,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -578,7 +610,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
