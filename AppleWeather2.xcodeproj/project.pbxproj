@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C71D60E2AFC886300B694F3 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C71D60D2AFC886300B694F3 /* WeatherViewController.swift */; };
+		1C71D6102AFC894B00B694F3 /* SearchBarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C71D60F2AFC894B00B694F3 /* SearchBarNavigationView.swift */; };
 		1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4502AF8A8C500A54D18 /* AppDelegate.swift */; };
 		1CCFD4532AF8A8C500A54D18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4522AF8A8C500A54D18 /* SceneDelegate.swift */; };
 		1CCFD4582AF8A8C500A54D18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFD4562AF8A8C500A54D18 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C71D60D2AFC886300B694F3 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		1C71D60F2AFC894B00B694F3 /* SearchBarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarNavigationView.swift; sourceTree = "<group>"; };
 		1CCFD44D2AF8A8C500A54D18 /* AppleWeather2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWeather2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCFD4502AF8A8C500A54D18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CCFD4522AF8A8C500A54D18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 		1CCFD4892AF8A93F00A54D18 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1C71D60D2AFC886300B694F3 /* WeatherViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 		1CCFD48B2AF8A94500A54D18 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1C71D60F2AFC894B00B694F3 /* SearchBarNavigationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			files = (
 				1CCFD4A92AF991CB00A54D18 /* WeatherService.swift in Sources */,
 				1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */,
+				1C71D6102AFC894B00B694F3 /* SearchBarNavigationView.swift in Sources */,
 				1CCFD49B2AF8B3BD00A54D18 /* Typealias.swift in Sources */,
 				1CCFD45B2AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld in Sources */,
 				1CCFD4912AF8AF2700A54D18 /* EndPoint.swift in Sources */,
@@ -399,6 +406,7 @@
 				1CCFD4A72AF98E9B00A54D18 /* WeatherViewModel.swift in Sources */,
 				1CCFD4532AF8A8C500A54D18 /* SceneDelegate.swift in Sources */,
 				1CCFD4952AF8AF6600A54D18 /* Location.swift in Sources */,
+				1C71D60E2AFC886300B694F3 /* WeatherViewController.swift in Sources */,
 				1CCFD4AB2AF9973E00A54D18 /* WeatherServiceDependencies.swift in Sources */,
 				1CCFD4A12AF8BBD700A54D18 /* URLRequestFactory.swift in Sources */,
 				1CCFD4AE2AF9993600A54D18 /* LocationService.swift in Sources */,
