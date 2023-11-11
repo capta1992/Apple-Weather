@@ -25,16 +25,27 @@ class WeatherViewController: UIViewController {
     
     // MARK: - Properties
     private var viewModel: WeatherViewModel?
-    private var cities: [CityWeather] = [
-        CityWeather(from: .init(name: "Test City", main: .init(temp: 76.0, feels_like: 82.0, humidity: 30), weather: [.init(id: 1, description: "overcast clouds")]))
-    ]
+    private var cities: [CityWeather] = []
     private lazy var tapRecognizer: UITapGestureRecognizer = .init(target: self, action: #selector(handleDismissKeyboard))
     private lazy var searchbar: SearchBarNavigationView = .init(placeholder: Constants.placeholder)
-    private let notificationView = NotificationView()
+    private let weatherDetailsView = WeatherDetailsView()
     
-    private let weatherTableView: UITableView = {
+    private let hourlyForecastCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        // TODO: - [OF] Register cell classes, set delegate and data source
+        return collectionView
+    }()
+    
+    private let dailyForecastTableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .black
+        // TODO: - [OF] Register cell classes, set delegate and dataSource
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -52,19 +63,51 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        configureGradientBackground()
         configureUI()
+        initializeWeatherData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
+    // MARK: - API
+    
+    private func fetchWeatherForCity(city: String) async  {
+        do {
+            let cityWeather = try await weatherService.weather(for: city)
+            let viewModel = WeatherViewModel(model: cityWeather)
+            DispatchQueue.main.async {
+                self.updateUIWithWeather(viewModel)
+            }
+        } catch {
+            DispatchQueue.main.async {
+                // TODO: - [OF] Handle error, show alert or update UI accordingly
+            }
+        }
+    }
+    
+    private func updateUIWithWeather(_ viewModel: WeatherViewModel) {
+        // Update your cities array or other UI Components
+        weatherDetailsView.update(using: viewModel)
+        
+    }
+    
+    private func initializeWeatherData() {
+        Task {
+            await fetchWeatherForCity(city: "Chicago")
+        }
+    }
+    
     // MARK: - Helpers
     private func configureUI() {
         configureNavigation()
         configureSearchBarAndStacks()
-        configureTableView()
+        
+        view.addSubview(weatherDetailsView)
+        weatherDetailsView.anchor(top: searchbar.bottomAnchor, paddingTop: Constants.padding)
+        weatherDetailsView.centerX(inView: view)
     }
     
     private func configureNavigation() {
@@ -92,34 +135,32 @@ class WeatherViewController: UIViewController {
         )
     }
     
+    private func setupHourlyForecast() {
+        view.addSubview(hourlyForecastCollectionView)
+        hourlyForecastCollectionView.anchor(top: weatherDetailsView.bottomAnchor, paddingTop: Constants.padding)
+        hourlyForecastCollectionView.centerX(inView: view)
+        hourlyForecastCollectionView.setHeight(height: 100)
+        hourlyForecastCollectionView.fillSuperview()
+    }
+    
+    private func setupDailyForecast() {
+        view.addSubview(dailyForecastTableView)
+        dailyForecastTableView.anchor(top: hourlyForecastCollectionView.bottomAnchor, paddingTop: Constants.padding)
+        dailyForecastTableView.fillSuperview()
+    }
+    
     private func configureTableView() {
-        weatherTableView.delegate = self
-        weatherTableView.dataSource = self
-        weatherTableView.rowHeight = Constants.rowHeight
-        weatherTableView.register(CityTableViewCell.self, forCellReuseIdentifier: Constants.reuseIdentifier)
+        
     }
     
     // MARK: - Actions
     @objc private func handleDismissKeyboard() {
         
-    }
+   }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
-extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cities.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.reuseIdentifier, for: indexPath) as? CityTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.textLabel?.text = "Los Angeles"
-        cell.textLabel?.textColor = .white
-        return cell
-    }
-}
+
 
 // MARK: - SearchBarDelegate
 extension WeatherViewController: UISearchBarDelegate {

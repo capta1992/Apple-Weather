@@ -7,28 +7,13 @@
 
 import UIKit
 
-extension UIColor {
-    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
-        return UIColor.init(red: red/255, green: green/255, blue: blue/255, alpha: 1.0)
-    }
-    static let twitterBlue = UIColor.rgb(red: 29, green: 161, blue: 242)
-    static let backgroundColor = UIColor.rgb(red: 25, green: 25, blue: 25)
-    static let wedjColor = UIColor.rgb(red: 61, green: 89, blue: 115)
-    static let darkBlueMode = UIColor.rgb(red: 36, green: 52, blue: 71)
-    static let mainBlueTint = UIColor.rgb(red: 17, green: 154, blue: 237)
-    static let instagramColor = UIColor.rgb(red: 253, green: 29, blue: 29)
-}
-
 extension UIViewController {
-    func configureGradientLayer() {
-        let topColor = #colorLiteral(red: 0.9921568627, green: 0.3568627451, blue: 0.3725490196, alpha: 1)
-        let bottomColor = #colorLiteral(red: 0.8980392157, green: 0, blue: 0.4470588235, alpha: 1)
-        
+    func configureGradientBackground() {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
-        gradientLayer.locations = [0, 1]
-        view.layer.addSublayer(gradientLayer)
-        gradientLayer.frame = view.frame
+        gradientLayer.colors = [UIColor.black.cgColor, UIColor.darkGray.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
 
@@ -113,39 +98,11 @@ extension UIView {
         widthAnchor.constraint(equalToConstant: width).isActive = true
     }
     
-    
-    func pulse(withIntensity intensity: CGFloat, withDuration duration: Double, loop: Bool) {
-        UIView.animate(withDuration: duration, delay: 0, options: [.repeat, .autoreverse], animations: {
-            loop ? nil : UIView.setAnimationRepeatCount(1)
-            self.transform = CGAffineTransform(scaleX: intensity, y: intensity)
-        }) { (true) in
-            self.transform = CGAffineTransform.identity
-        }
-    }
-    
-    enum ViewSide {
-        case Left, Right, Top, Bottom
-    }
-    
-    func addBorder(toSide side: ViewSide, withColor color: CGColor, andThickness thickness: CGFloat) {
-        let border = CALayer()
-        border.backgroundColor = color
-        switch side {
-        case .Left: border.frame = CGRect(x: frame.minX, y: frame.minY, width: thickness, height: frame.height); break
-        case .Right: border.frame = CGRect(x: frame.maxX, y: frame.minY, width: thickness, height: frame.height); break
-        case .Top: border.frame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: thickness); break
-        case .Bottom: border.frame = CGRect(x: frame.minX, y: frame.maxY, width: frame.width, height: thickness); break
-        }
-        layer.addSublayer(border)
-    }
-    
-    
     func addConstraintsToFillView(_ view: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         anchor(top: view.topAnchor, left: view.leftAnchor,
                bottom: view.bottomAnchor, right: view.rightAnchor)
     }
-    
     
     func fillSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
@@ -158,7 +115,6 @@ extension UIView {
                bottom: superviewBottomAnchor, right: superviewTrailingAnchor)
     }
 }
-
 
 extension UIViewController {
     func showMessage(withTitle title: String, message: String) {
@@ -182,7 +138,7 @@ extension UITextField {
         doneToolbar.sizeToFit()
         doneToolbar.backgroundColor = .white
         doneToolbar.barTintColor = backgroundColor
-        done.tintColor = .twitterBlue
+        done.tintColor = .link
         self.inputAccessoryView = doneToolbar
     }
     
@@ -207,55 +163,5 @@ extension UIView {
             self.translatesAutoresizingMaskIntoConstraints = true
             self.frame.origin.y += deltaY
         }, completion: nil)
-    }
-}
-
-extension UIView {
-    func inputContainerView(image: UIImage, textField: UITextField? = nil,
-                            segmentedControl: UISegmentedControl? = nil) -> UIView {
-        let view = UIView()
-        let imageView = UIImageView()
-        imageView.image = image
-        imageView.alpha = 0.87
-        view.addSubview(imageView)
-        
-        if let textField = textField {
-            imageView.centerY(inView: view)
-            imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24, height: 24)
-            
-            view.addSubview(textField)
-            textField.centerY(inView: view)
-            textField.anchor(left: imageView.rightAnchor, bottom: view.bottomAnchor,
-                             right: view.rightAnchor, paddingLeft: 8, paddingBottom: 8)
-        }
-        
-        if let sc = segmentedControl {
-            imageView.anchor(top: view.topAnchor, left: view.leftAnchor,
-                             paddingTop: -8, paddingLeft: 8, width: 24, height: 24)
-            
-            
-            view.addSubview(sc)
-            sc.anchor(left: view.leftAnchor, right: view.rightAnchor,
-                      paddingLeft: 8, paddingRight: 8)
-            sc.centerY(inView: view, constant: 16)
-        }
-        
-        let separatorView = UIView()
-        separatorView.backgroundColor = .lightGray
-        view.addSubview(separatorView)
-        separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor,
-                             right: view.rightAnchor, paddingLeft: 8, height: 0.75)
-        
-        separatorView.isHidden = true
-        return view
-    }
-}
-
-extension UIButton {
-    func selectedColor() {
-        self.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
-    }
-    func deselectedColor() {
-        self.backgroundColor = .twitterBlue
     }
 }
