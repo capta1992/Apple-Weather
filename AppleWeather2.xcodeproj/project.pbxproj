@@ -10,6 +10,8 @@
 		1C71D60E2AFC886300B694F3 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C71D60D2AFC886300B694F3 /* WeatherViewController.swift */; };
 		1C71D6102AFC894B00B694F3 /* SearchBarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C71D60F2AFC894B00B694F3 /* SearchBarNavigationView.swift */; };
 		1C89297F2AFF48DA000AD144 /* WeatherDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89297E2AFF48DA000AD144 /* WeatherDetailsView.swift */; };
+		1C8929822AFF53B5000AD144 /* HourlyForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8929812AFF53B5000AD144 /* HourlyForecastCollectionViewCell.swift */; };
+		1C8929842B00C3C0000AD144 /* HourlyTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8929832B00C3C0000AD144 /* HourlyTimeCollectionViewCell.swift */; };
 		1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4502AF8A8C500A54D18 /* AppDelegate.swift */; };
 		1CCFD4532AF8A8C500A54D18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFD4522AF8A8C500A54D18 /* SceneDelegate.swift */; };
 		1CCFD4582AF8A8C500A54D18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFD4562AF8A8C500A54D18 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		1C71D60D2AFC886300B694F3 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		1C71D60F2AFC894B00B694F3 /* SearchBarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarNavigationView.swift; sourceTree = "<group>"; };
 		1C89297E2AFF48DA000AD144 /* WeatherDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsView.swift; sourceTree = "<group>"; };
+		1C8929812AFF53B5000AD144 /* HourlyForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C8929832B00C3C0000AD144 /* HourlyTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CCFD44D2AF8A8C500A54D18 /* AppleWeather2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWeather2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCFD4502AF8A8C500A54D18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CCFD4522AF8A8C500A54D18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 		1C8929802AFF4FFA000AD144 /* HourlyForecastView */ = {
 			isa = PBXGroup;
 			children = (
+				1C8929812AFF53B5000AD144 /* HourlyForecastCollectionViewCell.swift */,
+				1C8929832B00C3C0000AD144 /* HourlyTimeCollectionViewCell.swift */,
 			);
 			name = HourlyForecastView;
 			sourceTree = "<group>";
@@ -418,12 +424,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C8929822AFF53B5000AD144 /* HourlyForecastCollectionViewCell.swift in Sources */,
 				1CCFD4A92AF991CB00A54D18 /* WeatherService.swift in Sources */,
 				1CCFD4512AF8A8C500A54D18 /* AppDelegate.swift in Sources */,
 				1C71D6102AFC894B00B694F3 /* SearchBarNavigationView.swift in Sources */,
 				1CCFD49B2AF8B3BD00A54D18 /* Typealias.swift in Sources */,
 				1CCFD45B2AF8A8C500A54D18 /* AppleWeather2.xcdatamodeld in Sources */,
 				1CCFD4912AF8AF2700A54D18 /* EndPoint.swift in Sources */,
+				1C8929842B00C3C0000AD144 /* HourlyTimeCollectionViewCell.swift in Sources */,
 				1CCFD4A32AF8BE8C00A54D18 /* WireCityWeather.swift in Sources */,
 				1CCFD4992AF8B35400A54D18 /* NetworkingService.swift in Sources */,
 				1CCFD4972AF8B03C00A54D18 /* NetworkingError.swift in Sources */,

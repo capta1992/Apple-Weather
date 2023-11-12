@@ -9,7 +9,7 @@ import UIKit
 
 class WeatherDetailsView: UIView {
     
-    // MARK: - Properties
+    // MARK: - UI Components
     private let cityNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 32, weight: .medium)
@@ -59,6 +59,7 @@ class WeatherDetailsView: UIView {
         return label
     }()
     
+    // MARK: - Lifecycycle
     init() {
         super.init(frame: .zero)
         configureUI()
@@ -68,6 +69,7 @@ class WeatherDetailsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Helpers
     private func configureUI() {
         highLowTempView.addArrangedSubview(highTempLabel)
         highLowTempView.addArrangedSubview(lowTempLabel)

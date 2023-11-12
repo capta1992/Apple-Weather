@@ -15,6 +15,7 @@ private enum Constants {
     static let padding: CGFloat = 16.0
     static let rowHeight: CGFloat = 50.0
     static let placeholder: String = "Search for a city"
+    static let collectionReuseIdentifier: String = "HourlyForecastCollectionViewCell"
 }
 
 class WeatherViewController: UIViewController {
@@ -26,6 +27,8 @@ class WeatherViewController: UIViewController {
     // MARK: - Properties
     private var viewModel: WeatherViewModel?
     private var cities: [CityWeather] = []
+    
+    // MARK: - UI Components
     private lazy var tapRecognizer: UITapGestureRecognizer = .init(target: self, action: #selector(handleDismissKeyboard))
     private lazy var searchbar: SearchBarNavigationView = .init(placeholder: Constants.placeholder)
     private let weatherDetailsView = WeatherDetailsView()
@@ -37,7 +40,8 @@ class WeatherViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        // TODO: - [OF] Register cell classes, set delegate and data source
+        collectionView.backgroundColor = .clear
+        collectionView.clipsToBounds = false
         return collectionView
     }()
     
@@ -64,6 +68,7 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureGradientBackground()
+        registerCollectionViewCell()
         configureUI()
         initializeWeatherData()
     }
@@ -96,7 +101,7 @@ class WeatherViewController: UIViewController {
     
     private func initializeWeatherData() {
         Task {
-            await fetchWeatherForCity(city: "Chicago")
+            await fetchWeatherForCity(city: "Los Angeles")
         }
     }
     
@@ -108,6 +113,8 @@ class WeatherViewController: UIViewController {
         view.addSubview(weatherDetailsView)
         weatherDetailsView.anchor(top: searchbar.bottomAnchor, paddingTop: Constants.padding)
         weatherDetailsView.centerX(inView: view)
+        
+       setupHourlyForecast()
     }
     
     private func configureNavigation() {
@@ -119,6 +126,15 @@ class WeatherViewController: UIViewController {
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
         navigationController?.navigationBar.standardAppearance = appearance
+    }
+    
+    private func registerCollectionViewCell() {
+        hourlyForecastCollectionView.register(
+            HourlyForecastCollectionViewCell.self,
+            forCellWithReuseIdentifier: Constants.collectionReuseIdentifier
+        )
+        hourlyForecastCollectionView.dataSource = self
+        hourlyForecastCollectionView.delegate = self
     }
     
     private func configureSearchBarAndStacks() {
@@ -137,10 +153,17 @@ class WeatherViewController: UIViewController {
     
     private func setupHourlyForecast() {
         view.addSubview(hourlyForecastCollectionView)
-        hourlyForecastCollectionView.anchor(top: weatherDetailsView.bottomAnchor, paddingTop: Constants.padding)
-        hourlyForecastCollectionView.centerX(inView: view)
-        hourlyForecastCollectionView.setHeight(height: 100)
-        hourlyForecastCollectionView.fillSuperview()
+        // Modify the anchor constraints to fill the width of the screen
+        hourlyForecastCollectionView.anchor(
+            top: weatherDetailsView.bottomAnchor,
+            left: view.leftAnchor,
+            right: view.rightAnchor,
+            paddingTop: Constants.padding,
+            paddingLeft: 16,  // Set padding to 0 to fill the width
+            paddingRight: 16,  // Set padding to 0 to fill the width
+            height: 150  // Adjust the height as needed
+        )
+        hourlyForecastCollectionView.reloadData()  // Ensure to reload data
     }
     
     private func setupDailyForecast() {
@@ -160,6 +183,31 @@ class WeatherViewController: UIViewController {
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
+
+// MARK: - UICollectionViewDataSource
+extension WeatherViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.collectionReuseIdentifier, for: indexPath) as? HourlyForecastCollectionViewCell else {
+            fatalError("Unable to dequeue HourlyForecastCollectionViewCell")
+        }
+        // Here you would pass the actual model to configure your cell
+        // For example:
+        // let hourlyWeather = viewModel.hourlyWeather[indexPath.item]
+        // cell.configure(with: hourlyWeather)
+        cell.conditionalsLabel.text = "Clear conditions tonight, continuing through the morning. Wind gusts are up to 6 mph."
+        return cell
+    }
+}
+
+extension WeatherViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: collectionView.frame.width, height: 150)
+    }
+}
 
 
 // MARK: - SearchBarDelegate
